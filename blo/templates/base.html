@@ -1,0 +1,36 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Flaskr</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='bul.css') }}">
+
+  <h1 class="bkg-ali has-t-cen p-10"><a href="{{ url_for('index') }}">Flaskr</a></h1>
+<nav>
+    <div class="navbar-menu bkg-ali">
+    <div class="navbar-item">
+    {% if g.user %}
+      {{ g.user['username'] }}&nbsp;
+      <a href="{{ url_for('auth.logout') }}">Log Out</a>
+    {% else %}
+      <a href="{{ url_for('auth.register') }}">Register</a>
+      <a href="{{ url_for('auth.login') }}">Log In</a>
+    {% endif %}
+    </div>
+    </div>
+</nav>
+
+<section class="content">
+  <header class="has-t-cen">
+    {% block header %}{% endblock %}
+  </header>
+  <div class="row">
+      <div class="col bkg-ali is-one-4"></div>
+  <div class="col bkg-tom">
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+  </div>
+  
+  <div class="col bkg-ali is-one-4">  </div>
+
+</section>
