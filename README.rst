@@ -1,4 +1,4 @@
-Flaskr
+## flo - flask blog
 ======
 
 The basic blog app built in the Flask `tutorial`_.
@@ -22,24 +22,31 @@ default Git version is the master branch. ::
     $ cd examples/tutorial
 
 Create a virtualenv and activate it::
-
+```sh
     $ python3 -m venv venv
     $ . venv/bin/activate
+```
 
 Or on Windows cmd::
 
+```sh
     $ py -3 -m venv venv
     $ venv\Scripts\activate.bat
+```
 
 Install Flaskr::
 
+```sh
     $ pip install -e .
+```
 
 Or if you are using the master branch, install Flask from source before
 installing Flaskr::
 
+```sh
     $ pip install -e ../..
     $ pip install -e .
+```
 
 
 Run
